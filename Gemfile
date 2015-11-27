@@ -5,6 +5,7 @@ gem 'rails', '4.0.1'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
+gem 'kaminari'
 # gem 'sass-rails', '>= 3.2'
 
 # Use postgresql as the database for Active Record
