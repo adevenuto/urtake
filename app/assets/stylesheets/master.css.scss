@@ -39,3 +39,12 @@ body {
   padding-left: 30px;
   color: #fff;
 }
+@media only screen and (min-width:900px) {
+    .badass-box2 {
+      height: 175px;
+      width: 37.5%;
+      display: inline-block;
+      text-align: center;
+      overflow: hidden;
+    }
+}
