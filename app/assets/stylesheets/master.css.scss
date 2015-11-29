@@ -6,6 +6,9 @@ body {
   background: url('/assets/grey_wash_wall.png');
   /*font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;*/
 }
+input, button, select, textarea {
+  color: black;
+}
 .navbar.navbar-inverse {
   /*background:url('/assets/grey_wash_wall.png');*/
    border-radius: 0;

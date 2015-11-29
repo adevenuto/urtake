@@ -9,6 +9,8 @@ gem 'sprockets', '2.11.0'
 
 gem 'kaminari'
 
+gem 'devise', '>= 3.2.4'
+
 gem 'simple_form'
 # gem 'sass-rails', '>= 3.2'
 
