@@ -9,6 +9,14 @@ body {
 input, button, select, textarea {
   color: black;
 }
+.alert {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 50%;
+  margin-left: 17px;
+  text-align: -webkit-center;
+  padding: 7px;
+}
 .navbar.navbar-inverse {
   /*background:url('/assets/grey_wash_wall.png');*/
    border-radius: 0;
