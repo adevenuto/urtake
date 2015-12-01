@@ -9,6 +9,10 @@ gem 'sprockets', '2.11.0'
 
 gem 'kaminari'
 
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+
 gem 'devise', '>= 3.2.4'
 
 gem 'simple_form'

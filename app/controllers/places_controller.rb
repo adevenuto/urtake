@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update]
   def index
-    @places = Place.all
-
+    @places = Place.order('created_at DESC').page(params[:page]).per(5).page(params[:page]).per(5)
+    # @places = Place.search((params[:q].present? ? params[:q] : '*')).records
   end
   def new
     @place = Place.new
@@ -18,10 +18,16 @@ class PlacesController < ApplicationController
 
   def edit
     @place = Place.find(params[:id])
+    if @place.user != current_user
+      return render :text => 'SORRY :(', :status => :forbidden
+    end
   end
 
   def update
     @place = Place.find(params[:id])
+    if @place.user != current_user && current_user
+      return render :text => 'SORRY :(', :status => :forbidden
+    end
     @place.update_attributes(place_params)
     redirect_to root_path
   end
