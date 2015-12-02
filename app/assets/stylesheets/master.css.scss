@@ -61,9 +61,11 @@ small {
   padding-left: 25px;
   color: #fff;
 }
-
 ::-webkit-scrollbar{
   display:none;
+}
+#map {
+  height: 300px;
 }
 @media only screen and (min-width:900px) {
     .badass-box2 {
