@@ -6,6 +6,7 @@
   <p><%= place.description %></p>
 
   <% if place.user.present? %>
+    <i class="user">Posted by:</i>
     <small><%= place.user.email %></small>
   <% end %>
 </div>

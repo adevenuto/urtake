@@ -22,6 +22,12 @@ input, button, select, textarea {
   margin-left: 5px;
   color: red;
 }
+small {
+  color: red;
+}
+.badass-box .user {
+  font-size: smaller;
+}
 .navbar.navbar-inverse {
   /*background:url('/assets/grey_wash_wall.png');*/
    border-radius: 0;
@@ -57,10 +63,9 @@ input, button, select, textarea {
 }
 @media only screen and (min-width:900px) {
     .badass-box2 {
-      height: 175px;
+      height: 180;
       width: 37.5%;
       display: inline-block;
-      text-align: center;
       overflow: hidden;
     }
 }
