@@ -9,6 +9,10 @@ gem 'sprockets', '2.11.0'
 
 gem 'kaminari'
 
+gem 'geocoder'
+
+gem "figaro", ">= 1.0.0"
+
 gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
