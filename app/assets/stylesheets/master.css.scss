@@ -18,6 +18,10 @@ input, button, select, textarea {
   text-align: -webkit-center;
   padding: 7px;
 }
+.field_with_errors span{
+  margin-left: 5px;
+  color: red;
+}
 .navbar.navbar-inverse {
   /*background:url('/assets/grey_wash_wall.png');*/
    border-radius: 0;
