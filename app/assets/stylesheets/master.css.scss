@@ -10,6 +10,9 @@ body {
 input, button, select, textarea {
   color: black;
 }
+.clear {
+  clear: both;
+}
 .alert {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
