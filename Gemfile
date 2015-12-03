@@ -13,10 +13,6 @@ gem 'geocoder'
 
 gem "figaro", ">= 1.0.0"
 
-gem 'elasticsearch-rails'
-
-gem 'elasticsearch-model'
-
 gem 'devise', '>= 3.2.4'
 
 gem 'simple_form'

@@ -51,14 +51,6 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<% if false %>
-
-    <%= form_tag places_path, role: 'search', method: :get do |f| %>
-    <%= text_field_tag :q, params[:q], class: 'form-control' %>
-    <%= button_tag "Search", class: 'btn btn-default', name: nil %>
-    <% end %>
-
-<% end %>
 
 <%= yield %>
 
