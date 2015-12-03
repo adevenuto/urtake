@@ -4,6 +4,7 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
+  <!-- GOOGLE MAP INTEGRATION -->
   <% if @place.latitude.present? && @place.longitude.present? %>
   <script>
     function initMap() {
@@ -27,6 +28,7 @@
 
   <div id="map"></div>
   <% end %>
+  <!-- END -->
 
   <br />
   <div class="pull-right">

@@ -3,6 +3,8 @@
   <%= simple_form_for @place do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :url %>
+    <%= f.input :phone_number %>
     <%= f.input :description %>
     <br />
     <%= f.submit "Create", :class => 'btn btn_primary' %>
