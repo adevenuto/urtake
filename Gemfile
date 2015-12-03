@@ -13,6 +13,8 @@ gem 'geocoder'
 
 gem "figaro", ">= 1.0.0"
 
+gem 'ransack'
+
 gem 'devise', '>= 3.2.4'
 
 gem 'simple_form'

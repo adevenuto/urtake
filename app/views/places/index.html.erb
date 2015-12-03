@@ -1,22 +1,42 @@
-<% @places.each do |place| %>
+<%# <% if false %>
+  <%# <% if current_user.present? %>
+    <% content_for :search do %>
+      <div>
+        <%= search_form_for @places do |f| %>
+        <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Names" %>
+        <%= f.text_field :address_cont, class: "radius-left expand", placeholder: "Addresses" %>
+        <%= f.submit "Search", id: "submit-search-btn" %>
+        <% end %>
+      </div>
+    <% end %>
+  <%# <% end %>
+<%# <% end %>
 
-<div class="badass-box badass-box2 col-xs-10 col-xs-offset-1">
-  <h1><%= link_to place.name, place_path(place) %></h1>
-  <i><%= place.address %></i><br />
-  <% if place.url.present? %>
-    <i class="contact"><%= link_to place.url, "#{place.url}" %></i><br />
-  <% end %>
-  <% if place.phone_number.present? %>
-    <i class="glyphicon glyphicon-earphone"></i>
-    <a class="contact" href="tel:<%= place.phone_number %>"><%= place.phone_number %></a>
-  <% end %>
-  <br /><br />
-  <p><%= place.description %></p>
-
-  <% if place.user.present? %>
-    <i class="user">Posted by:</i>
-    <small><%= place.user.email %></small>
-  <% end %>
+<div id="search-box-container">
+  <div id="search-box">
+    <%= yield(:search) %>
+  </div>
 </div>
 
+<% @results.each do |result| %>
+  <div class="badass-box badass-box2 col-xs-10 col-xs-offset-1">
+    <h1><%= link_to result.name, place_path(result) %></h1>
+    <i><%= result.address %></i><br />
+    <% if result.url.present? %>
+      <i class="contact"><%= link_to result.url, "#{result.url}" %></i><br />
+    <% end %>
+    <% if result.phone_number.present? %>
+      <i class="glyphicon glyphicon-earphone"></i>
+      <a class="contact" href="tel:<%= result.phone_number %>"><%= result.phone_number %></a>
+    <% end %>
+    <br /><br />
+    <p><%= result.description %></p>
+
+    <% if result.user.present? %>
+      <i class="user">Posted by:</i>
+      <small><%= result.user.email %></small>
+    <% end %>
+  </div>
 <% end %>
+
+

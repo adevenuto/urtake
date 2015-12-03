@@ -1,7 +1,8 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   def index
-    @places = Place.order('created_at DESC').page(params[:page]).per(8)
+    @places = Place.order('created_at DESC').page(params[:page]).per(8).search(params[:q])
+    @results = @places.result
   end
   def new
     @place = Place.new
