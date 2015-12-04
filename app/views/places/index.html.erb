@@ -3,8 +3,8 @@
     <% content_for :search do %>
       <div>
         <%= search_form_for @places do |f| %>
-        <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Names" %>
-        <%= f.text_field :address_cont, class: "radius-left expand", placeholder: "Addresses" %>
+        <%= f.text_field :name_cont, class: "radius-left expand", placeholder: "Name" %>
+        <%= f.text_field :address_cont, class: "radius-left expand", placeholder: "Address" %>
         <%= f.submit "Search", id: "submit-search-btn" %>
         <% end %>
       </div>
