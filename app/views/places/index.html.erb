@@ -30,7 +30,22 @@
       <a class="contact" href="tel:<%= result.phone_number %>"><%= result.phone_number %></a>
     <% end %>
     <br /><br />
-    <p><%= result.description %></p>
+    <% if result.comments.present? == false%>
+      <p><%= result.description %></p>
+    <% end %>
+
+  <% if result.comments.present? %>
+    <div class="col-xs-12">
+      <blockquote>
+        <% if result.comments.last.humanized_rating.present? %>
+          <b><%= result.comments.last.humanized_rating %></b>
+        <% end %>
+          <%= result.comments.last.message %>
+        <small><%= result.comments.last.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+
 
     <% if result.user.present? %>
       <i class="user">Posted by:</i>
