@@ -11,8 +11,6 @@ gem 'kaminari'
 
 gem 'carrierwave'
 
-gem 'rmagick'
-
 gem 'geocoder'
 
 gem "figaro", ">= 1.0.0"
