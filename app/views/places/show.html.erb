@@ -88,7 +88,12 @@
 <%= f.submit 'Add photo' %>
 <% end %>
 <% @place.photos.each do |photo| %>
+
+
+
   <%= image_tag photo.picture %>
+</div>
+
   <%= photo.caption %>
 <% end %>
 
