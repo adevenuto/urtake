@@ -100,6 +100,7 @@ blockquote {
   height: 90px;
   margin: 1em 5px;
   padding: 0.5em 10px;
+  overflow: auto;
 }
 blockquote:before {
   color: #ccc;
@@ -118,7 +119,39 @@ blockquote span {
 .comment-txt {
   margin-left: 20px;
 }
+.picture-controls {
 
+}
+.picture-gallery {
+  border: 2px solid #000;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.content-container {
+  display: inline-block;
+  padding: 20px;
+}
+.uploaded-pictures {
+  border: 2px solid #000;
+}
+.uploaded-pictures:hover {
+  border: 2px solid #fff;
+}
+.picture-caption {
+  margin: 5px 0 15px 0;
+}
+/*@media only screen and (min-width:550px) {
+    .content-container {
+      display: inline-block;
+
+  }
+  .picture-gallery {
+    text-align: center;
+  }
+}*/
 @media only screen and (min-width:900px) {
   .badass-box2 {
     height: 180px;

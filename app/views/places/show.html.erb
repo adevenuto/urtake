@@ -82,21 +82,6 @@
   <div class="clear"></div>
 </div>
 
-<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-<%= f.input :caption %>
-<%= f.input :picture %>
-<%= f.submit 'Add photo' %>
-<% end %>
-<% @place.photos.each do |photo| %>
-
-
-
-  <%= image_tag photo.picture %>
-</div>
-
-  <%= photo.caption %>
-<% end %>
-
 <h1 class="comment-txt">Comments</h1>
 <div class="clear"></div>
 
@@ -111,3 +96,25 @@
     </blockquote>
   </div>
 <% end %>
+
+<!-- PICTURE CONTROLS -->
+<div class="picture-controls clear">
+  <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+    <%= f.input :caption %>
+    <%= f.input :picture %>
+    <%= f.submit 'Add photo' %>
+  <% end %>
+</div>
+<!-- PICTURE DISPLAY -->
+<div class="picture-gallery">
+  <% @place.photos.each do |photo| %>
+    <div class="content-container">
+      <div  class="uploaded-pictures">
+        <%= image_tag photo.picture, :size => '250x220' %>
+      </div>
+      <div class="picture-caption">
+        <%= photo.caption %>
+      </div>
+    </div>
+  <% end %>
+</div>
