@@ -26,7 +26,7 @@
       <i class="contact"><%= link_to result.url, "#{result.url}" %></i><br />
     <% end %>
     <% if result.phone_number.present? %>
-      <i class="glyphicon glyphicon-earphone"></i>
+      <i class="glyphicon glyphicon-earphone call-icon"></i>
       <a class="contact" href="tel:<%= result.phone_number %>"><%= result.phone_number %></a>
     <% end %>
 
