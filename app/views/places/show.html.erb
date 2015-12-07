@@ -33,27 +33,28 @@
   <br />
   <div class="pull-right">
     <% if current_user && current_user == @place.user %>
-    <%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
-    <%= link_to 'Delete', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class => 'btn btn-primary' %>
+    <%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary btn-sm' %>
+    <%= link_to 'Delete', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class => 'btn btn-primary btn-sm' %>
     <% end %>
+    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalComment">
+        Add comment
+    </button>
+    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalPhoto">
+      Add Photo
+    </button>
   </div>
+
 </div>
 <div class="clear"></div>
 
-
-
-
-
-<!-- MODAL -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- MODAL FOR COMMENT-->
+<div class="modal fade" id="myModalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add comment</h4>
       </div>
-
-      <!-- COMMENT FORM -->
       <div class="modal-body">
         <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
         <div class="modal-body">
@@ -61,30 +62,63 @@
           <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
         </div>
       </div>
-      <!--  END -->
-
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit "Add comment", :class => 'btn btn-primary' %>
+         <%= f.submit "Add comment", :class => 'btn btn-primary' %>
       </div>
       <% end %>
     </div>
   </div>
 </div>
 
+<!-- MODAL FOR PHOTO-->
+<div class="modal fade" id="myModalPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Photo</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+          <div class="modal-body">
+            <%= f.input :caption %>
+            <%= f.input :picture %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <%= f.submit "Add photo", :class => 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<div class="col-xs-10 col-xs-offset-1">
 
-  <!-- BUTTON TRIGGER MODAL -->
-  <button class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal">
-    Add comment
+
+<% if false %>
+<!-- BUTTON TRIGGER COMMENT PHOTO -->
+<div class="col-xs-10 col-xs-offset-1 pull-right">
+  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalPhoto">
+    Add Photo
   </button>
   <div class="clear"></div>
 </div>
 
-<h1 class="comment-txt">Comments</h1>
-<div class="clear"></div>
+<!-- BUTTON TRIGGER COMMENT MODAL -->
+<div class="col-xs-10 col-xs-offset-1 pull-right">
+  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModalComment">
+    Add comment
+  </button>
+  <div class="clear"></div>
+</div>
+<% end %>
 
+
+
+<!-- COMMENTS SECTION -->
+<h1 class="comment-txt">Comments</h1>
 <% @place.comments.each do |comment| %>
    <div class="col-xs-12 col-sm-6">
     <blockquote>
@@ -95,22 +129,15 @@
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
+  <div class="clear"></div>
 <% end %>
 
-<!-- PICTURE CONTROLS -->
-<div class="picture-controls clear">
-  <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-    <%= f.input :caption %>
-    <%= f.input :picture %>
-    <%= f.submit 'Add photo' %>
-  <% end %>
-</div>
 <!-- PICTURE DISPLAY -->
 <div class="picture-gallery">
   <% @place.photos.each do |photo| %>
     <div class="content-container">
       <div  class="uploaded-pictures">
-        <%= image_tag photo.picture, :size => '250x220' %>
+        <%= image_tag photo.picture, class: "img-responsive" %>
       </div>
       <div class="picture-caption">
         <%= photo.caption %>

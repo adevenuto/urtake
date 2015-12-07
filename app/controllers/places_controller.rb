@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.order('created_at DESC').page(params[:page]).per(8).search(params[:q])
     @results = @places.result
+    @photos = Photo.new
   end
   def new
     @place = Place.new

@@ -29,7 +29,15 @@
       <i class="glyphicon glyphicon-earphone"></i>
       <a class="contact" href="tel:<%= result.phone_number %>"><%= result.phone_number %></a>
     <% end %>
-    <br /><br />
+
+    <br />
+
+    <% if result.photos.last.present? %>
+      <div class="index-picture">
+        <%= image_tag result.photos.last.picture, class: "img-responsive" %>
+      </div>
+    <% end %>
+
     <% if result.comments.present? == false%>
       <p><%= result.description %></p>
     <% end %>
@@ -51,7 +59,10 @@
       <i class="user">Posted by:</i>
       <small><%= result.user.email %></small>
     <% end %>
+
   </div>
+
+
 <% end %>
 
 

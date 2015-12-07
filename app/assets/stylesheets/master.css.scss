@@ -118,12 +118,10 @@ blockquote span {
 }
 .comment-txt {
   margin-left: 20px;
-}
-.picture-controls {
-
+  margin-top: 30px;
 }
 .picture-gallery {
-  border: 2px solid #000;
+  /*border: 2px solid #000;*/
   text-align: center;
   margin-top: 20px;
   width: 100%;
@@ -136,12 +134,18 @@ blockquote span {
 }
 .uploaded-pictures {
   border: 2px solid #000;
+  height: auto;
+  width: 250px;
 }
 .uploaded-pictures:hover {
   border: 2px solid #fff;
 }
 .picture-caption {
   margin: 5px 0 15px 0;
+}
+.index-picture {
+  height: 100px;
+  width: 100px;
 }
 /*@media only screen and (min-width:550px) {
     .content-container {
