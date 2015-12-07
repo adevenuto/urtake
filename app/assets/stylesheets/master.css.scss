@@ -135,7 +135,7 @@ blockquote span {
 .uploaded-pictures {
   border: 2px solid #000;
   height: auto;
-  width: 250px;
+  width: 252px;
 }
 .uploaded-pictures:hover {
   border: 2px solid #fff;
@@ -146,6 +146,7 @@ blockquote span {
 .index-picture {
   height: 100px;
   width: 100px;
+  /*overflow: hidden;*/
 }
 /*@media only screen and (min-width:550px) {
     .content-container {

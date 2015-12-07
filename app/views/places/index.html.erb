@@ -34,7 +34,7 @@
 
     <% if result.photos.last.present? %>
       <div class="index-picture">
-        <%= image_tag result.photos.last.picture, class: "img-responsive" %>
+        <%= image_tag result.photos.last.picture, :size => "100x100" %>
       </div>
     <% end %>
 

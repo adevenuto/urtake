@@ -137,7 +137,7 @@
   <% @place.photos.each do |photo| %>
     <div class="content-container">
       <div  class="uploaded-pictures">
-        <%= image_tag photo.picture, class: "img-responsive" %>
+        <%= image_tag photo.picture, :size => '248x200' %>
       </div>
       <div class="picture-caption">
         <%= photo.caption %>
