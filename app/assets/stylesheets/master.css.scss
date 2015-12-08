@@ -3,6 +3,9 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
   font-weight: 200;
 }
+h2, .h2 {
+    font-size: 30px;
+    }
 body {
   background: url('/assets/dark_fish_skin.png');
   color: #fff;
@@ -88,8 +91,12 @@ blockquote small {
 .badass-box > h1 > a {
   color: rgba(203, 253, 2, 0.51);
 }
+
 ::-webkit-scrollbar{
   display:none;
+}
+.hide {
+  display: none;
 }
 /*input[type="submit"] {
   -webkit-appearance: initial;
