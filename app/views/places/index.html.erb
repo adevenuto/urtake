@@ -12,11 +12,7 @@
   <%# <% end %>
 <%# <% end %>
 
-<div id="search-box-container">
-  <div id="search-box">
-    <%= yield(:search) %>
-  </div>
-</div>
+
 
 <!-- CAROUSEL -->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -29,22 +25,22 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
+    <div class="item">
       <%= image_tag 'slider1.JPG' %>
-      <div class="carousel-caption">
-        TPC Cancun, Nick Price design
+      <div class="carousel-captions">
+        Xel-ha
       </div>
     </div>
     <div class="item">
       <%= image_tag 'slider2.JPG' %>
-      <div class="carousel-caption">
-        ...
+      <div class="carousel-captions">
+        Royal Carribean Cancun
       </div>
     </div>
     <div class="item active">
       <%= image_tag 'slider3.JPG' %>
-      <div class="carousel-caption">
-        TPC Cancun, Nick Price design
+      <div class="carousel-captions">
+        Xcaret, Mexico
       </div>
     </div>
   </div>
@@ -60,7 +56,11 @@
   </a>
 </div>
 
-
+<div id="search-box-container">
+  <div id="search-box">
+    <%= yield(:search) %>
+  </div>
+</div>
 
 
 <% @results.each do |result| %>
