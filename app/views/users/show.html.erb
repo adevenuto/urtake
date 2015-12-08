@@ -1,5 +1,13 @@
-<h1>Dahboard</h1>
-<h2><%= @user.email %></div>
-<h5><%= @user.created_at.strftime("%B %d %Y") %><h5>
-<h4><%= @user.comments.count %> total comments</h4>
-<h4><%= @user.comments.where(:rating => '5_star').count %> total reviews</h4>
+<div class="badass-box">
+  <h1>Dashboard</h1>
+  <h2><%= @user.email %><h2>
+  <div class="profile-picture">
+    <%= image_tag 'user.png', :size => '100x100' %>
+  </div>
+  <div class="col-xs-8">
+    <h5><%= @user.created_at.strftime("%B %d %Y") %><h5>
+    <h4><%= @user.comments.count %> total comments</h4>
+    <h4><%= @user.comments.where(:rating => '5_star').count %> total reviews</h4>
+  </div>
+  <div class="clear"></div>
+</div>
