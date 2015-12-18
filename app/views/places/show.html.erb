@@ -5,28 +5,29 @@
   <p><%= @place.description %></p>
 
   <!-- GOOGLE MAP INTEGRATION -->
+
   <% if @place.latitude.present? && @place.longitude.present? %>
-  <script>
-    function initMap() {
-      var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+    <script>
+      function initMap() {
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: myLatLng
-      });
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
 
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-      });
-    }
-  </script>
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap">
-  </script>
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap">
+    </script>
 
-  <div id="map"></div>
+    <div id="map"></div>
   <% end %>
   <!-- END -->
 
@@ -82,7 +83,7 @@
         <h4 class="modal-title" id="myModalLabel">Add Photo</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+     <%# Needs refresh to work on load %> <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
           <div class="modal-body">
             <%= f.input :caption %>
             <%= f.input :picture %>
